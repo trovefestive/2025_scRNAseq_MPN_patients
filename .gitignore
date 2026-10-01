@@ -1,0 +1,31 @@
+# Whitelist: ignore everything at top level, then allow only code, notes and
+# small results. Raw data (fastq/, cellranger_count/, reference/) and Seurat
+# objects (*.rds, 1-2 GB each) are never tracked.
+/*
+!/.gitignore
+!/README.md
+!/*.R
+!/*.py
+!/*.slurm
+!/runs.txt
+!/SraRunTable.csv
+!/notes/
+!/genesets/
+!/seurat_qc/
+# multiqc_report/ excluded: report embeds absolute run paths
+!/stage4/
+!/stage5/
+!/stage6/
+!/stage7/
+!/stage8/
+!/stage9/
+!/stage10/
+!/stage11/
+!/stage13/
+
+# Inside allowed dirs: no objects, no per-cell tables, nothing over GitHub's limit
+*.rds
+/seurat_qc/*_barcodes.txt
+/seurat_qc/*_scrublet.csv
+/multiqc_report/multiqc_data/
+/stage11/wilcoxauc_full_rankings.csv.gz
