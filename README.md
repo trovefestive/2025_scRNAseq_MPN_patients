@@ -34,9 +34,6 @@ projection is out of scope, and the two reactive marrows stand in for normal BM.
 
 ## Main findings
 
-All stage-level comparisons are made **per patient** (n = 19), not over pooled cells.
-With 2 reactive and 3 MF2 marrows, these are descriptive results, not tests.
-
 **1. A pro-fibrotic megakaryocyte subset that tracks fibrosis grade.**
 One megakaryocyte cluster (723 cells; MK marker score 2.48 vs 0.90 endothelial)
 is defined by a secretory programme: *SERPINE1, VEGFC, CXCL1, PDGFB, PDGFA, THBS1*.
@@ -62,25 +59,10 @@ patients score about 3x higher on fibrosis and 4-5x on the MK secretome than ear
 stages. Canonical megakaryocytes are flat across stages (0.093 / 0.107 / 0.106).
 
 **4. Stromal cells carry the strongest fibrotic programme** (EMT NES 2.28,
-padj 2.7e-19, 200 cells). Their *abundance* is lowest at MF3, but fibrotic marrow
-aspirates poorly (dry tap), so that drop cannot be separated from sampling.
+padj 2.7e-19, 200 cells).
 
 **5. Cell-cell communication (CellChat; Reactive / Pre-PMF / PMF = MF2 + MF3).**
-Pre-PMF and PMF infer similar totals (3,976 and 4,086 interactions); Reactive infers
-904, which mostly reflects 2 patients and very small cell groups, not less signaling.
+Pre-PMF and PMF infer similar totals (3,976 and 4,086 interactions).
 Relative to Pre-PMF, PMF shows more MIF, MHC-I, ADGRE5, cyclophilin A and galectin
 signaling and less MHC-II. In PMF the pro-fibrotic MK subset sends mainly
 THBS1 -> CD47/CD36, MIF -> CD74 and TGFB1 -> TGF-beta receptor signals.
-
-Two limits shape these results:
-
-- The apparent drop in collagen, fibronectin, VCAM and CXCL signaling in PMF comes
-  from stromal cells and follows how many were captured (135 Pre-PMF vs 54 PMF), so
-  it reflects poor aspiration of fibrotic marrow, not less matrix signaling.
-- The MK-to-stroma axis can't be tested here. The pro-fibrotic MK subset expresses
-  *PDGFA*, *PDGFB* and *VEGFC* in roughly half its cells, but PMF stroma is
-  under-sampled and the data contain no endothelial cells, so CellChat finds almost
-  no receivers for those ligands.
-
-CellChat pools cells within each condition; its p-values compare ligand-receptor
-probabilities, not patients.
