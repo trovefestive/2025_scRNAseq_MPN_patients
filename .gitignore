@@ -22,6 +22,8 @@
 !/stage10/
 !/stage11/
 !/stage13/
+!/stage14/
+!/review/
 
 # Inside allowed dirs: no objects, no per-cell tables, nothing over GitHub's limit
 *.rds
@@ -29,3 +31,7 @@
 /seurat_qc/*_scrublet.csv
 /multiqc_report/multiqc_data/
 /stage11/wilcoxauc_full_rankings.csv.gz
+
+# review/: keep the R check scripts only (the shell wrapper holds a local path)
+/review/*.sh
+/review/*.txt

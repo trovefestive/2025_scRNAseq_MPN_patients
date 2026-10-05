@@ -31,13 +31,22 @@ projection is out of scope, and the two reactive marrows stand in for normal BM.
 | 11 | fgsea HALLMARK on full per-cell-type rankings | `stage11_fgsea.R` | `stage11/` |
 | 12 | MK cross-subtype projection | skipped: no ET/PV in cohort | |
 | 13 | CellChat per condition, then cross-condition comparison | `stage13a_cellchat_per_condition.R`, `stage13b_compare.R` | `stage13/` |
+| 14 | Per-cell-type pseudobulk DE, MF3 vs prefibrotic + MF2 (edgeR QL, `~ sex + group`, patient as replicate) | `stage14_pseudobulk_de.R` | `stage14/` |
 
 ## Main findings
 
-**1. A pro-fibrotic megakaryocyte subset that tracks fibrosis grade.**
-One megakaryocyte cluster (723 cells; MK marker score 2.48 vs 0.90 endothelial)
-is defined by a secretory programme: *SERPINE1, VEGFC, CXCL1, PDGFB, PDGFA, THBS1*.
-Three independent analyses agree it is fibrogenic:
+Statistics below are per patient (n = 19 marrows).
+
+**1. Megakaryocytes expand with disease stage.** The megakaryocyte-lineage fraction
+rises with stage (Spearman rho 0.65, p = 0.003): median 1.5% reactive, 3.3%
+prefibrotic, 4.0% MF2, 9.9% MF3. It stays significant without the most MK-rich
+marrow (p = 0.006).
+
+**2. MF3 marrow contains intact megakaryocytes with a fibrogenic programme.**
+One cluster (723 cells) is intact megakaryocytes: about 19,000 UMIs per cell, with
+the mature MK glycoproteins GP6 and GP1BA in about 80% of cells. It isn't doublets
+(0.4% co-express endothelial genes, 0% stromal). Its markers are *SERPINE1, VEGFC,
+CXCL1, PDGFB, PDGFA* and *THBS1*, and three independent analyses call it fibrogenic:
 
 - marker genes (Stage 9);
 - literature fibrosis signatures not derived from this data: ranked 1st of 26
@@ -46,23 +55,28 @@ Three independent analyses agree it is fibrogenic:
 - unsupervised GSEA over all 50 HALLMARK sets: COAGULATION (padj 2.3e-4),
   TGF-beta (0.013), ANGIOGENESIS (0.044), EMT (0.049) (Stage 11).
 
-It is present in 8 of 9 MF3 marrows (median 0.64% of cells) and essentially absent
-at MF2 (<= 0.06%), pre-fibrotic (<= 0.19%) and reactive (0%). MF2 and MF3 are both
-overt PMF, so this follows fibrosis grade, not diagnosis alone.
+Intact megakaryocytes were captured almost only from MF3 marrow (1,056 of 1,075
+cells; none from reactive marrow). In MF3, 10-65% of each patient's intact
+megakaryocytes carry the programme; 1 of the 19 captured from earlier stages does.
+The cluster's share of cells is higher in MF3 (p = 0.003).
 
-**2. Megakaryocyte expansion with disease stage.** Median MK-lineage fraction per
-patient: reactive 1.5%, prefibrotic 3.3%, MF2 4.0%, MF3 9.9%. One MF3 marrow is at
-39%; excluding it the MF3 median is 9.5%.
+**3. Megakaryocyte progenitors shift toward the same programme in MF3.** MF3 MK
+progenitors score higher than earlier stages on fibrosis (p = 0.002), MK secretome
+(p = 0.02) and angiogenesis (p = 0.05) signatures. Platelet-like MK particles
+(about 1,000 UMIs per cell) do not change across stages (0.093 / 0.107 / 0.106).
 
-**3. The fibrogenic shift is confined to MK subsets.** Within MK progenitors, MF3
-patients score about 3x higher on fibrosis and 4-5x on the MK secretome than earlier
-stages. Canonical megakaryocytes are flat across stages (0.093 / 0.107 / 0.106).
+**4. MF3 progenitors express PRAME.** In the pseudobulk comparison, HSC/MPP and MEP
+express the cancer-testis antigen *PRAME* in 8 of 8 MF3 patients and none of 6
+earlier-stage patients; T cells from the same marrows don't express it. MF3 MEPs
+also express *EGF* and *DKK1* above the highest earlier-stage level in 7 of 8
+patients.
 
-**4. Stromal cells carry the strongest fibrotic programme** (EMT NES 2.28,
-padj 2.7e-19, 200 cells).
+**5. Fibroblast-like stromal cells carry the strongest fibrotic programme** (EMT
+NES 2.28, padj 2.7e-19). Of the 96 cells with a fibroblast programme, 94 come from
+prefibrotic marrow and none from MF3.
 
-**5. Cell-cell communication (CellChat; Reactive / Pre-PMF / PMF = MF2 + MF3).**
+**6. Cell-cell communication (CellChat; Reactive / Pre-PMF / PMF = MF2 + MF3).**
 Pre-PMF and PMF infer similar totals (3,976 and 4,086 interactions).
 Relative to Pre-PMF, PMF shows more MIF, MHC-I, ADGRE5, cyclophilin A and galectin
-signaling and less MHC-II. In PMF the pro-fibrotic MK subset sends mainly
+signaling and less MHC-II. In PMF, intact megakaryocytes send mainly
 THBS1 -> CD47/CD36, MIF -> CD74 and TGFB1 -> TGF-beta receptor signals.

@@ -1,0 +1,26 @@
+"cell_type","n_MF3","n_Early","tested","n_genes","n_FDR05","n_FDR05_autosomal","sex_model"
+"B_naive",7,8,TRUE,10651,0,0,"~ sex + group"
+"cDC2",4,4,TRUE,9632,2,2,"~ sex + group"
+"Cycling_progenitor",0,0,FALSE,NA,NA,NA,NA
+"Erythroblast",9,8,TRUE,12215,2,2,"~ sex + group"
+"Erythroid_late",9,3,TRUE,8185,0,0,"~ sex + group"
+"Erythroid_late_HBG",8,5,TRUE,3051,1,1,"~ sex + group"
+"GMP_promyelocyte",5,4,TRUE,10352,9,9,"~ sex + group"
+"HSC_MPP",8,6,TRUE,18138,66,65,"~ sex + group"
+"Megakaryocyte_intact",7,0,FALSE,NA,NA,NA,NA
+"Megakaryocyte_prog",8,7,TRUE,7965,0,0,"~ sex + group"
+"MEP",8,6,TRUE,16554,15,15,"~ sex + group"
+"Monocyte_classical",9,8,TRUE,12056,1,1,"~ sex + group"
+"Monocyte_nonclassical",7,4,TRUE,8792,15,1,"~ group; SEX FULLY CONFOUNDED"
+"Monocyte_S100high",5,3,TRUE,6838,0,0,"~ sex + group"
+"MSC_stromal",0,2,FALSE,NA,NA,NA,NA
+"Neutrophil",6,6,TRUE,3878,2,2,"~ sex + group"
+"NK",8,8,TRUE,11525,0,0,"~ sex + group"
+"pDC",1,3,FALSE,NA,NA,NA,NA
+"Plasma_cell",0,2,FALSE,NA,NA,NA,NA
+"Platelet_like_MK",7,6,TRUE,3746,321,313,"~ sex + group"
+"Progenitor_G2M",7,1,FALSE,NA,NA,NA,NA
+"T_CD4_memory",7,6,TRUE,9618,4,4,"~ sex + group"
+"T_CD4_naive",8,8,TRUE,11765,0,0,"~ sex + group"
+"T_CD8_GZMK",8,8,TRUE,12486,2,2,"~ sex + group"
+"T_memory",9,8,TRUE,8657,0,0,"~ sex + group"
