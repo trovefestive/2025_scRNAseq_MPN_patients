@@ -32,6 +32,7 @@ projection is out of scope, and the two reactive marrows stand in for normal BM.
 | 12 | MK cross-subtype projection | skipped: no ET/PV in cohort | |
 | 13 | CellChat per condition, then cross-condition comparison | `stage13a_cellchat_per_condition.R`, `stage13b_compare.R` | `stage13/` |
 | 14 | Per-cell-type pseudobulk DE, MF3 vs prefibrotic + MF2 (edgeR QL, `~ sex + group`, patient as replicate) | `stage14_pseudobulk_de.R` | `stage14/` |
+| - | Whole-marrow pseudobulk per patient, limma-voom (`~ 0 + group + sex`), laid out like the Rampal et al. MPN workbook, with a gene-by-gene comparison to its MF vs Normal | `comparison_workbook/make_pseudobulk_limma.R`, `comparison_workbook/build_workbook.py` | `comparison_workbook/MPN_PMF_scRNAseq_Analysis.xlsx` |
 
 ## Main findings
 

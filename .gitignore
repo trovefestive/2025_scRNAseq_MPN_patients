@@ -24,6 +24,7 @@
 !/stage13/
 !/stage14/
 !/review/
+!/comparison_workbook/
 
 # Inside allowed dirs: no objects, no per-cell tables, nothing over GitHub's limit
 *.rds
@@ -35,3 +36,8 @@
 # review/: keep the R check scripts only (the shell wrapper holds a local path)
 /review/*.sh
 /review/*.txt
+# comparison_workbook/: keep the workbook, scripts, metadata and model info; the
+# de_*.csv / log2cpm tables are inside the workbook and regenerable
+/comparison_workbook/*.sh
+/comparison_workbook/de_*.csv
+/comparison_workbook/log2cpm_matrix.csv

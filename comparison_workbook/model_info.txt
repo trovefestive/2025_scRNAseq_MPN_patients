@@ -1,0 +1,11 @@
+genes_tested 25969
+n_Reactive 2
+n_PrePMF 5
+n_MF2 3
+n_MF3 8
+contrast PrePMF_vs_Reactive PrePMF - Reactive
+contrast MF2_vs_Reactive MF2 - Reactive
+contrast MF3_vs_Reactive MF3 - Reactive
+contrast MF3_vs_PrePMF MF3 - PrePMF
+contrast MF3_vs_Early MF3 - (5*PrePMF + 3*MF2)/8
+contrast MPNvsReactive (5*PrePMF + 3*MF2 + 8*MF3)/16 - Reactive
